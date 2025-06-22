@@ -13,9 +13,6 @@ This creates a library package named `rust_arch_demo`, which we’ll later expan
 * A separate local crate (in `crates/` directory)
 * Reusable paths and `use` statements
 
-Once you've run this, confirm and I’ll guide you to the next step: adding a binary crate inside this package.
-
-
 Step 2: **Add a Binary Crate Inside the Package**
 
 Inside the `rust_arch_demo` folder, create a `src/bin` directory:
