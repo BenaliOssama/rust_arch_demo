@@ -44,7 +44,6 @@ You can run the binary with:
 cargo run --bin app
 ```
 
-Confirm when ready to continue — next step will be to organize the library crate with modules and paths.
 
 
 Step 3: **Organize the Library (`lib.rs`) with Modules**
@@ -262,7 +261,6 @@ Then run again:
 cargo run --bin app
 ```
 
-Let me know when it works, and we’ll continue to the next step.
 
 
 Step 6: **Use `pub use` and Aliasing with `as`**
@@ -317,5 +315,4 @@ Run it again:
 cargo run --bin app
 ```
 
-Confirm when done. Next: we’ll add conditional compilation and a test module.
 
