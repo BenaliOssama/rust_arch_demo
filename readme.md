@@ -261,5 +261,79 @@ Run it again:
 ```bash
 cargo run --bin app
 ```
+Step 7: **Add Conditional Compilation and a Test Module**
+
+---
+
+### 1. Add a Feature Flag
+
+Open your root `Cargo.toml`, add a feature:
+
+```toml
+[features]
+fancy = []
+```
+
+### 2. Use Conditional Compilation in `greetings.rs`
+
+Edit `src/greetings.rs`:
+
+```rust
+#[cfg(feature = "fancy")]
+pub fn say_hello(name: &str) -> String {
+    format!("🌟 Hello, {}! 🌟", name)
+}
+
+#[cfg(not(feature = "fancy"))]
+pub fn say_hello(name: &str) -> String {
+    format!("Hello, {}!", name)
+}
+```
+
+### 3. Run With and Without Feature
+
+Default:
+
+```bash
+cargo run --bin app
+```
+
+With `fancy` feature:
+
+```bash
+cargo run --bin app --features fancy
+```
+
+---
+
+### 4. Add a Test Module to `math.rs`
+
+At the bottom of `src/math.rs`:
+
+```rust
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_add() {
+        assert_eq!(add(2, 3), 5);
+    }
+
+    #[test]
+    fn test_multiply() {
+        assert_eq!(multiply(4, 2), 8);
+    }
+}
+```
+
+Run tests:
+
+```bash
+cargo test
+```
+
+---
+
 
 
