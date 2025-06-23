@@ -95,8 +95,6 @@ Run again with:
 cargo run --bin app
 ```
 
-Confirm when you have this working to continue. Next, we’ll create a nested module structure inside `math`.
-
 
 Step 4: **Create Nested Modules in `math`**
 
