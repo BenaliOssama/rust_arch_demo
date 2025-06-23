@@ -209,54 +209,6 @@ Run:
 cargo run --bin app
 ```
 
-Confirm when ready. Next step will be to demonstrate re-exporting and using `use` with `as` aliasing.
-
-
-The error says you're trying to load a crate at:
-
-```
-/home/obenali/rust_arch_demo/crates/creates/utils
-```
-
-Notice the typo: `crates/creates/utils` — there is an extra `creates` folder.
-
-### Fix
-
-Make sure your folder structure looks like this:
-
-```
-rust_arch_demo/
-├── Cargo.toml
-├── crates/
-│   └── utils/
-│       ├── Cargo.toml
-│       └── src/lib.rs
-└── src/
-    ├── bin/
-    │   └── app.rs
-    ├── greetings.rs
-    ├── lib.rs
-    └── math/
-        └── operations.rs
-    └── math.rs
-```
-
-### Check & Fix the Path in `Cargo.toml`
-
-Open your root `Cargo.toml` and make sure the path to the `utils` crate is correct:
-
-```toml
-[dependencies]
-utils = { path = "crates/utils" }
-```
-
-Then run again:
-
-```bash
-cargo run --bin app
-```
-
-
 
 Step 6: **Use `pub use` and Aliasing with `as`**
 
